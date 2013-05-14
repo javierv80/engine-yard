@@ -1,0 +1,12 @@
+<h2>Resultado:</h2>
+
+
+<% if @customers.any? %>
+
+	<%= render 'customer' %>
+
+<% else %>
+
+    <%= render 'form' %>
+
+<% end %>

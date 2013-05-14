@@ -1,0 +1,24 @@
+<h1>Productos</h1>
+
+<table class="table table-striped">
+
+	<tr>
+		<th>Nombre</th>
+		<th>Precio</th>
+		<th>Usuario</th>
+		<th>Acciones</th>
+	</tr>
+
+<% @products.each do |product| %>
+	<tr>
+		<td><%= product.name %></td>
+		<td><%= product.price %></td>
+		<td><%= product.user.username %></td>
+		<td><%= link_to "Ver", product_path(product) %>
+		<%= link_to "Editar", edit_product_path(product) %>
+		<%= link_to "Borrar", product, method: :delete, data: { confirm: 'Estas seguro?'}%></td>
+	</tr>
+	<% end %>
+</table>
+
+<%= link_to "Crear Producto", new_product_path %>

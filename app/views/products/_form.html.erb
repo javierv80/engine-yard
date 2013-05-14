@@ -1,0 +1,22 @@
+<%= form_for (@product) do |f|%>
+
+	<p>
+		<%= f.label "Nombre" %>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label "Precio" %>
+		<%= f.number_field :price %>
+	</p>
+
+
+	<% if action_name == 'new' || 'search' %>
+	<p>
+		<%= f.submit "Agregar Producto" %>
+	</p>
+<% else %> 
+	<%= f.submit "Editar Producto" %>
+<% end %>
+
+<% end %>
